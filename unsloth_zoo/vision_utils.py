@@ -484,8 +484,8 @@ class UnslothVisionDataCollator:
         batch["labels"] = labels
         if self.train_on_responses_only:
             batch["labels"] = self.train_on_responses_only(batch)["labels"]
-            # print('YYYYYYOEEEEEE TRAIN ON RESPONSES ONLY')
-            # print(batch["labels"].tolist())
+            print('YYYYYYOEEEEEE TRAIN ON RESPONSES ONLY')
+            print(batch["labels"].tolist())
         return batch
     pass
 pass
