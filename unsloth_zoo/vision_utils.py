@@ -188,6 +188,8 @@ def extract_vision_info(conversations: Union[list[dict], list[list[dict]]]) -> l
                         or ele["type"] in ("image", "image_url", "video")
                     ):
                         vision_infos.append(ele)
+    print('YYYYYYOOOOOOEEEEEE')
+    print(vision_infos)
     return vision_infos
 pass
 
