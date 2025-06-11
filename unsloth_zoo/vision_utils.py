@@ -188,8 +188,6 @@ def extract_vision_info(conversations: Union[list[dict], list[list[dict]]]) -> l
                         or ele["type"] in ("image", "image_url", "video")
                     ):
                         vision_infos.append(ele)
-    print('YYYYYYOOOOOOEEEEEE')
-    print(vision_infos)
     return vision_infos
 pass
 
@@ -429,6 +427,8 @@ class UnslothVisionDataCollator:
             if "images" in example:
                 image = [example["images"][0]]
             else:
+                print('YYYYYYOOOOOOEEEEEE')
+                print(messages)
                 image, video = process_vision_info(messages)
                 if image is None: image = []
             pass
