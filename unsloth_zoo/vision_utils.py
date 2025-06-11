@@ -427,7 +427,7 @@ class UnslothVisionDataCollator:
             if "images" in example:
                 image = [example["images"][0]]
             else:
-                print('YYYYYYOOOOOOEEEEEE')
+                print('YYYYYYOEEEEEE')
                 print(messages)
                 image, video = process_vision_info(messages)
                 if image is None: image = []
@@ -458,8 +458,8 @@ class UnslothVisionDataCollator:
             return_tensors = "pt",
             add_special_tokens = False, # Stop double BOS
         )
-        print('YYYYYOOOOOEEEEE BATCH')
-        print(batch)
+        # print('YYYYYOEEEEE BATCH')
+        # print(batch)
         # Cannot remove due to bidirectional attention from Gemma 3!
         # batch.pop("token_type_ids", None)
 
@@ -483,7 +483,9 @@ class UnslothVisionDataCollator:
         labels[torch.isin(labels, self.padding_token_ids)] = self.ignore_index
         batch["labels"] = labels
         if self.train_on_responses_only:
+            print('YYYYYYOEEEEEE TRAIN ON RESPONSES ONLY')
             batch["labels"] = self.train_on_responses_only(batch)["labels"]
+            print(batch["labels"])
         return batch
     pass
 pass
