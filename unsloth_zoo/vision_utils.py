@@ -270,7 +270,7 @@ class UnslothVisionDataCollator:
         processor,
         max_seq_length  = None,
         formatting_func = None,
-        resize = "min", # Can be (10, 10) or "min" to resize to fit
+        resize = "max", # Can be (10, 10) or "min" to resize to fit
                         # the model's default image_size or "max"
                         # for no resizing and leave image intact
         ignore_index = -100,
@@ -458,6 +458,8 @@ class UnslothVisionDataCollator:
             return_tensors = "pt",
             add_special_tokens = False, # Stop double BOS
         )
+        print('YYYYYOOOOOEEEEE BATCH')
+        print(batch)
         # Cannot remove due to bidirectional attention from Gemma 3!
         # batch.pop("token_type_ids", None)
 
