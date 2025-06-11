@@ -483,9 +483,9 @@ class UnslothVisionDataCollator:
         labels[torch.isin(labels, self.padding_token_ids)] = self.ignore_index
         batch["labels"] = labels
         if self.train_on_responses_only:
-            print('YYYYYYOEEEEEE TRAIN ON RESPONSES ONLY')
             batch["labels"] = self.train_on_responses_only(batch)["labels"]
-            print(batch["labels"])
+            print('YYYYYYOEEEEEE TRAIN ON RESPONSES ONLY')
+            print(batch["labels"].tolist())
         return batch
     pass
 pass
