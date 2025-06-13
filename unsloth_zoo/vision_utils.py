@@ -157,6 +157,7 @@ def fetch_image(
             factor=size_factor,
         )
     else:
+        print('Entro YYYYYYOEEEEEE RESIZE')
         width, height = image.size
         min_pixels = ele.get("min_pixels", MIN_PIXELS)
         max_pixels = ele.get("max_pixels", MAX_PIXELS)
@@ -167,6 +168,8 @@ def fetch_image(
             min_pixels=min_pixels,
             max_pixels=max_pixels,
         )
+        print('Resized height: ', resized_height)
+        print('Resized width: ', resized_width)
     image = image.resize((resized_width, resized_height))
 
     return image
