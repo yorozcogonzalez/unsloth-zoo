@@ -458,8 +458,8 @@ class UnslothVisionDataCollator:
             return_tensors = "pt",
             add_special_tokens = False, # Stop double BOS
         )
-        print('YYYYYOEEEEE BATCH')
-        print(batch["input_ids"].tolist())
+        print('YYYYYOEEEEE BATCH SIZE')
+        # print(batch["input_ids"].tolist())
         print(len(batch["input_ids"][0]))
         # Cannot remove due to bidirectional attention from Gemma 3!
         # batch.pop("token_type_ids", None)
