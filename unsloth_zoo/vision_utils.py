@@ -460,6 +460,7 @@ class UnslothVisionDataCollator:
         )
         print('YYYYYOEEEEE BATCH')
         print(batch["input_ids"].tolist())
+        print(len(batch["input_ids"]))
         # Cannot remove due to bidirectional attention from Gemma 3!
         # batch.pop("token_type_ids", None)
 
@@ -484,8 +485,8 @@ class UnslothVisionDataCollator:
         batch["labels"] = labels
         if self.train_on_responses_only:
             batch["labels"] = self.train_on_responses_only(batch)["labels"]
-            print('YYYYYYOEEEEEE TRAIN ON RESPONSES ONLY')
-            print(batch["labels"].tolist())
+            # print('YYYYYYOEEEEEE TRAIN ON RESPONSES ONLY')
+            # print(batch["labels"].tolist())
         return batch
     pass
 pass
