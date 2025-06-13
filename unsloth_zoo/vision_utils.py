@@ -460,7 +460,7 @@ class UnslothVisionDataCollator:
         )
         print('YYYYYOEEEEE BATCH')
         print(batch["input_ids"].tolist())
-        print(len(batch["input_ids"]))
+        print(len(batch["input_ids"][0]))
         # Cannot remove due to bidirectional attention from Gemma 3!
         # batch.pop("token_type_ids", None)
 
