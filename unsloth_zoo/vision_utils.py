@@ -61,7 +61,7 @@ from io import BytesIO
 import math
 import requests
 from typing import Union, Tuple
-IMAGE_FACTOR = 28
+IMAGE_FACTOR = 14
 MIN_PIXELS = 4 * 28 * 28
 MAX_PIXELS = 16384 * 28 * 28
 MAX_RATIO = 200
