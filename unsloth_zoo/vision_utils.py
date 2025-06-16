@@ -157,8 +157,8 @@ def fetch_image(
             factor=size_factor,
         )
     else:
-        print('Entro YYYYYYOEEEEEE RESIZE')
-        print('Image size: ', image.size)
+        # print('Entro YYYYYYOEEEEEE RESIZE')
+        # print('Image size: ', image.size)
         width, height = image.size
         min_pixels = ele.get("min_pixels", MIN_PIXELS)
         max_pixels = ele.get("max_pixels", MAX_PIXELS)
@@ -463,9 +463,9 @@ class UnslothVisionDataCollator:
             return_tensors = "pt",
             add_special_tokens = False, # Stop double BOS
         )
-        print('YYYYYOEEEEE BATCH SIZE')
+        # print('YYYYYOEEEEE BATCH SIZE')
         # print(batch["input_ids"].tolist())
-        print(len(batch["input_ids"][0]))
+        # print(len(batch["input_ids"][0]))
         # Cannot remove due to bidirectional attention from Gemma 3!
         # batch.pop("token_type_ids", None)
 
