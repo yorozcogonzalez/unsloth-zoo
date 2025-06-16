@@ -169,10 +169,10 @@ def fetch_image(
             min_pixels=min_pixels,
             max_pixels=max_pixels,
         )
-        print('Resized height: ', resized_height)
-        print('Resized width: ', resized_width)
+        # print('Resized height: ', resized_height)
+        # print('Resized width: ', resized_width)
     image = image.resize((resized_width, resized_height))
-    print('Resized image size: ', image.size)
+    # print('Resized image size: ', image.size)
 
     return image
 pass
