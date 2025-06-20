@@ -427,6 +427,8 @@ class UnslothVisionDataCollator:
                 tokenize = False,
                 add_generation_prompt = False,
             )
+            print('YYYYYYOEEEEEE MESSAGE')
+            print(message)
             texts.append(message)
             # Dataset with 2 columns messages / images
             if "images" in example:
