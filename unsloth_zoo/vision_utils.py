@@ -427,6 +427,16 @@ class UnslothVisionDataCollator:
                 tokenize = False,
                 add_generation_prompt = False,
             )
+            # Replace system prompt with medical assistant prompt
+            if "[SYSTEM_PROMPT]" in message:
+                start_idx = message.find("[SYSTEM_PROMPT]") + len("[SYSTEM_PROMPT]")
+                end_idx = message.find("[/SYSTEM_PROMPT]")
+                if end_idx != -1:  # Only replace if closing tag exists
+                    message = (
+                        message[:start_idx] +
+                        "You are an advanced medical assistant with skills to summarize medical records." +
+                        message[end_idx:]
+                    )
             print('YYYYYYOEEEEEE MESSAGE')
             print(message)
             texts.append(message)
