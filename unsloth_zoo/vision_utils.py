@@ -437,8 +437,8 @@ class UnslothVisionDataCollator:
                         "You are an advanced medical assistant with skills to summarize medical records." +
                         message[end_idx:]
                     )
-            print('YYYYYYOEEEEEE MESSAGE')
-            print(message)
+            # print('YYYYYYOEEEEEE MESSAGE')
+            # print(message)
             texts.append(message)
             # Dataset with 2 columns messages / images
             if "images" in example:
