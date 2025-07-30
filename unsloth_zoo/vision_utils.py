@@ -452,6 +452,9 @@ class UnslothVisionDataCollator:
             # Resize images
             image_size = self.image_size
 
+            print('YYYYYYOEEEEEE IMAGE SIZE')
+            print(image_size)
+            print('--------------------------------')
             if image_size is not None:
                 for i, img in enumerate(image):
                     print('YYYYYYOEEEEEE RESIZE')
