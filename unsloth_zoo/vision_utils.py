@@ -61,7 +61,7 @@ from io import BytesIO
 import math
 import requests
 from typing import Union, Tuple
-IMAGE_FACTOR = 14
+IMAGE_FACTOR = 28
 MIN_PIXELS = 4 * 28 * 28
 MAX_PIXELS = 16384 * 28 * 28
 MAX_RATIO = 200
@@ -428,15 +428,15 @@ class UnslothVisionDataCollator:
                 add_generation_prompt = False,
             )
             # Replace system prompt with medical assistant prompt
-            if "[SYSTEM_PROMPT]" in message:
-                start_idx = message.find("[SYSTEM_PROMPT]") + len("[SYSTEM_PROMPT]")
-                end_idx = message.find("[/SYSTEM_PROMPT]")
-                if end_idx != -1:  # Only replace if closing tag exists
-                    message = (
-                        message[:start_idx] +
-                        "You are an advanced medical assistant with skills to summarize medical records." +
-                        message[end_idx:]
-                    )
+            # if "[SYSTEM_PROMPT]" in message:
+            #     start_idx = message.find("[SYSTEM_PROMPT]") + len("[SYSTEM_PROMPT]")
+            #     end_idx = message.find("[/SYSTEM_PROMPT]")
+            #     if end_idx != -1:  # Only replace if closing tag exists
+            #         message = (
+            #             message[:start_idx] +
+            #             "You are an advanced medical assistant with skills to summarize medical records." +
+            #             message[end_idx:]
+            #         )
             # print('YYYYYYOEEEEEE MESSAGE')
             # print(message)
             texts.append(message)
@@ -457,6 +457,11 @@ class UnslothVisionDataCollator:
                     if type(image_size) is tuple:
                         image[i] = img.resize(image_size, LANCZOS)
                     elif img.size[0] > image_size:
+                        print('YYYYYYOEEEEEE RESIZE')
+                        print(img.size)
+                        print(image_size)
+                        print('--------------------------------')
+                        print(img)
                         if hasattr(img, "resize"):
                             wpercent = image_size / img.size[0]
                             hsize = int(img.size[1] * wpercent)
