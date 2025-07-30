@@ -150,6 +150,9 @@ def fetch_image(
         raise ValueError(f"Unrecognized image input, support local path, http url, base64 and PIL.Image, got {image}")
     image = image_obj.convert("RGB")
     ## resize
+    print('YYYYYYOEEEEEE ELE')
+    print(ele)
+    print('--------------------------------')
     if "resized_height" in ele and "resized_width" in ele:
         resized_height, resized_width = smart_resize(
             ele["resized_height"],
@@ -468,7 +471,7 @@ class UnslothVisionDataCollator:
 
                     if type(image_size) is tuple:
                         image[i] = img.resize(image_size, LANCZOS)
-                    elif img.size[0] > 100: #image_size:
+                    elif img.size[0] > image_size:
                         if hasattr(img, "resize"):
                             print('YYYYYYOEEEEEE has resize')
                             wpercent = image_size / img.size[0]
