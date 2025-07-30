@@ -470,6 +470,7 @@ class UnslothVisionDataCollator:
                         image[i] = img.resize(image_size, LANCZOS)
                     elif img.size[0] > image_size:
                         if hasattr(img, "resize"):
+                            print('YYYYYYOEEEEEE has resize')
                             wpercent = image_size / img.size[0]
                             hsize = int(img.size[1] * wpercent)
                             image[i] = img.resize((image_size, hsize), LANCZOS)
