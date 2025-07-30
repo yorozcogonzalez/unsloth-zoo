@@ -454,14 +454,15 @@ class UnslothVisionDataCollator:
 
             if image_size is not None:
                 for i, img in enumerate(image):
+                    print('YYYYYYOEEEEEE RESIZE')
+                    print(img.size)
+                    print(image_size)
+                    print('--------------------------------')
+                    print(img)
+
                     if type(image_size) is tuple:
                         image[i] = img.resize(image_size, LANCZOS)
                     elif img.size[0] > image_size:
-                        print('YYYYYYOEEEEEE RESIZE')
-                        print(img.size)
-                        print(image_size)
-                        print('--------------------------------')
-                        print(img)
                         if hasattr(img, "resize"):
                             wpercent = image_size / img.size[0]
                             hsize = int(img.size[1] * wpercent)
