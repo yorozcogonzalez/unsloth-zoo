@@ -165,6 +165,18 @@ def fetch_image(
         width, height = image.size
         min_pixels = ele.get("min_pixels", MIN_PIXELS)
         max_pixels = ele.get("max_pixels", MAX_PIXELS)
+        print('YYYYYYOEEEEEE HEIGHT')
+        print(height)
+        print('--------------------------------')
+        print('YYYYYYOEEEEEE WIDTH')
+        print(width)
+        print('--------------------------------')
+        print('YYYYYYOEEEEEE MIN PIXELS')
+        print(min_pixels)
+        print('--------------------------------')
+        print('YYYYYYOEEEEEE MAX PIXELS')
+        print(max_pixels)
+        print('--------------------------------')
         resized_height, resized_width = smart_resize(
             height,
             width,
