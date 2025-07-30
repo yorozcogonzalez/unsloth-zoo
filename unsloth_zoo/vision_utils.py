@@ -299,6 +299,9 @@ class UnslothVisionDataCollator:
         self.formatting_func = formatting_func
 
         # Auto resize images to save VRAM!
+        print('YYYYYYOEEEEEE RESIZE')
+        print(resize)
+        print('--------------------------------')
         if resize == "min":
             try:
                 self.image_size = model.config.vision_config.image_size
