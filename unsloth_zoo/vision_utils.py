@@ -314,9 +314,9 @@ class UnslothVisionDataCollator:
         self.formatting_func = formatting_func
 
         # Auto resize images to save VRAM!
-        print('YYYYYYOEEEEEE RESIZE')
-        print(resize)
-        print('--------------------------------')
+        # print('YYYYYYOEEEEEE RESIZE')
+        # print(resize)
+        # print('--------------------------------')
         if resize == "min":
             try:
                 self.image_size = model.config.vision_config.image_size
@@ -470,26 +470,32 @@ class UnslothVisionDataCollator:
             # Resize images
             image_size = self.image_size
 
-            print('YYYYYYOEEEEEE IMAGE SIZE')
-            print(image_size)
-            print('--------------------------------')
+            # print('YYYYYYOEEEEEE IMAGE SIZE')
+            # print(image_size)
+            # print('--------------------------------')
             if image_size is not None:
                 for i, img in enumerate(image):
-                    print('YYYYYYOEEEEEE RESIZE')
-                    print(img.size)
-                    print(image_size)
-                    print('--------------------------------')
-                    print(img)
+                    # print('YYYYYYOEEEEEE RESIZE')
+                    # print(img.size)
+                    # print(image_size)
+                    # print('--------------------------------')
+                    # print(img)
 
                     if type(image_size) is tuple:
                         image[i] = img.resize(image_size, LANCZOS)
                     elif img.size[0] > image_size:
                         if hasattr(img, "resize"):
                             print('YYYYYYOEEEEEE has resize')
+                            print('YYYYYYOEEEEEE IMG SIZE')
+                            print(img.size)
+                            print('--------------------------------')
                             wpercent = image_size / img.size[0]
                             hsize = int(img.size[1] * wpercent)
                             image[i] = img.resize((image_size, hsize), LANCZOS)
             pass
+            print('YYYYYYOEEEEEE New Image')
+            print(image)
+            print('--------------------------------')
             images.append(image)
         pass
 
