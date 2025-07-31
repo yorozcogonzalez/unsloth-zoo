@@ -150,9 +150,9 @@ def fetch_image(
         raise ValueError(f"Unrecognized image input, support local path, http url, base64 and PIL.Image, got {image}")
     image = image_obj.convert("RGB")
     ## resize
-    print('YYYYYYOEEEEEE ELE')
-    print(ele)
-    print('--------------------------------')
+    # print('YYYYYYOEEEEEE ELE')
+    # print(ele)
+    # print('--------------------------------')
     if "resized_height" in ele and "resized_width" in ele:
         resized_height, resized_width = smart_resize(
             ele["resized_height"],
@@ -165,18 +165,18 @@ def fetch_image(
         width, height = image.size
         min_pixels = ele.get("min_pixels", MIN_PIXELS)
         max_pixels = ele.get("max_pixels", MAX_PIXELS)
-        print('YYYYYYOEEEEEE HEIGHT')
-        print(height)
-        print('--------------------------------')
-        print('YYYYYYOEEEEEE WIDTH')
-        print(width)
-        print('--------------------------------')
-        print('YYYYYYOEEEEEE MIN PIXELS')
-        print(min_pixels)
-        print('--------------------------------')
-        print('YYYYYYOEEEEEE MAX PIXELS')
-        print(max_pixels)
-        print('--------------------------------')
+        # print('YYYYYYOEEEEEE HEIGHT')
+        # print(height)
+        # print('--------------------------------')
+        # print('YYYYYYOEEEEEE WIDTH')
+        # print(width)
+        # print('--------------------------------')
+        # print('YYYYYYOEEEEEE MIN PIXELS')
+        # print(min_pixels)
+        # print('--------------------------------')
+        # print('YYYYYYOEEEEEE MAX PIXELS')
+        # print(max_pixels)
+        # print('--------------------------------')
         resized_height, resized_width = smart_resize(
             height,
             width,
